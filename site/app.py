@@ -1,5 +1,6 @@
 from flask import Flask, render_template, flash, redirect, make_response
 from database import database
+from utils import send_email, send_error_email
 import traceback
 
 import logging
@@ -53,6 +54,10 @@ def create_app(environment):
     @app.errorhandler(500)
     def internal_error(exc):
         trace = traceback.format_exc()
+        try:
+            send_error_email(environment, trace)
+        except:
+            trace = traceback.format_exc()
         return make_response(render_template("whoops.html", trace=trace), 500)
 
     return app
