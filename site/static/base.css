@@ -4,7 +4,7 @@
  */
 
 /*
- * colors:
+ *  colors:
  *  blue: #0a4883
  *  red: #c5392f
  *  white: #ffffff
@@ -180,7 +180,7 @@ label.inline-label {
 }
 
 a.whitelink:visited, a.whitelink {
-    color: #ffffff;
+    color: #0a4883;
 }
 
 .center {
